@@ -3,6 +3,7 @@ import unittest
 class Game:
     def __init__(self, cells):
         self.cells = cells
+        
 def number_neighbors(cells):
     return 1
 
