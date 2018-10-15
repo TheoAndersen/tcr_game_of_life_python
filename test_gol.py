@@ -5,6 +5,6 @@ class Game:
         pass
 
 class TestThis(unittest.TestCase):
-    def test_(self):
+    def test_should_be_able_to_create_a_game(self):
         game = Game()
 
