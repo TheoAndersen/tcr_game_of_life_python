@@ -9,3 +9,4 @@ class TestThis(unittest.TestCase):
         game = Game([(2, 2)])
         self.assertEqual(1, len(game.cells))
 
+
