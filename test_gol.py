@@ -3,12 +3,12 @@ import unittest
 
 class Game:
     def __init__(self, cells):
-        self.realCells = list(map(lambda c: Cell(c[0], c[1]), cells))
+        self.cells = list(map(lambda c: Cell(c[0], c[1]), cells))
 
     def get_neighbours(self, cell):
         targetCell = Cell(cell[0], cell[1])
         neighbours = []
-        for thisCell in self.realCells:
+        for thisCell in self.cells:
             if (
                 targetCell.x - 1 <= thisCell.x
                 and targetCell.x + 1 >= thisCell.x
@@ -38,7 +38,7 @@ class TestThis(unittest.TestCase):
 
     def test_should_be_able_to_create_a_game(self):
         game = Game([(2, 2)])
-        self.assertEqual(1, len(game.realCells))
+        self.assertEqual(1, len(game.cells))
 
     def test_get_neighbours(self):
         game = Game([(1, 2), (3, 2), (2, 1), (2, 2), (2, 3)])
