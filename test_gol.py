@@ -8,6 +8,7 @@ class Game:
 
     def get_neighbours(self, cell):
         (cx, cy) = cell
+        targetCell = Cell(cx, cy)
         neighbours = []
         for (x, y) in self.cells:
             if cx - 1 <= x and cx + 1 >= x and cy - 1 <= y and cy + 1 >= y:
