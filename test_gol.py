@@ -12,8 +12,13 @@ class Game:
         neighbours = []
         for (x, y) in self.cells:
             thisCell = Cell(x, y)
-            if cx - 1 <= x and cx + 1 >= x and cy - 1 <= y and cy + 1 >= y:
-                if not (cy == y and cx == x):
+            if (
+                cx - 1 <= thisCell.x
+                and cx + 1 >= thisCell.x
+                and cy - 1 <= thisCell.y
+                and cy + 1 >= thisCell.y
+            ):
+                if not (cy == thisCell.y and cx == thisCell.x):
                     neighbours.append((x, y))
 
         return neighbours
