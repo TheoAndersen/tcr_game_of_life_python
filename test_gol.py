@@ -3,6 +3,7 @@ import unittest
 
 class Game:
     def __init__(self, cells):
+        self.realCells = map(lambda x, y: Cell(x, y), cells)
         self.cells = cells
 
     def get_neighbours(self, cell):
