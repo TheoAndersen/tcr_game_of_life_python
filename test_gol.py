@@ -10,7 +10,7 @@ def get_neighbours(cell, cells):
     (cx, cy) = cell
     neighbours = []
     for (x, y) in cells:
-        if cx - 1 <= x and cx + 1 >= x and cy - 1 <= y and cy + 1 >= cy:
+        if cx - 1 <= x and cx + 1 >= x and cy - 1 <= y and cy + 1 >= y:
             if not (cy == y and cx == x):
                 neighbours.append((x, y))
 
