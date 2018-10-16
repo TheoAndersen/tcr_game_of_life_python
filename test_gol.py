@@ -5,8 +5,13 @@ class Game:
         self.cells = cells
         
 def number_neighbors(cell, cells):
-        
-    return len(cells) - 1
+    (cx, cy) = cell
+    n = 0
+    for (x, y) in cells:
+        if(cx - 1 <= x and cx + 1 >= x and cy -1 <= y and cy + 1 >= cy):
+            n = n + 1
+
+    return n - 1
 
 class TestThis(unittest.TestCase):
     def test_should_be_able_to_create_a_game(self):
