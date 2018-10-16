@@ -5,7 +5,6 @@ class Game:
         self.cells = cells
         
 def number_neighbors(cell, cells):
-    (cx, cy) = cell
         
     return len(cells) - 1
 
