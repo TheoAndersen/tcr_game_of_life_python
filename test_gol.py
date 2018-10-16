@@ -22,7 +22,7 @@ class TestThis(unittest.TestCase):
         game = Game([(2, 2)])
         self.assertEqual(1, len(game.cells))
 
-    def test_neighboars(self):
+    def test_get_neighbours(self):
         cells = [(1, 2), (3, 2), (2, 1), (2, 2), (2, 3)]
         # -c-
         # cXc
