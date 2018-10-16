@@ -18,7 +18,7 @@ class Game:
                 if not (targetCell.y == thisCell.y and targetCell.x == thisCell.x):
                     neighbours.append(thisCell)
 
-        return list(map(lambda cell: (cell.x, cell.y), neighbours))
+        return neighbours
 
 
 class Cell:
@@ -52,17 +52,17 @@ class TestThis(unittest.TestCase):
         # -c-
         self.assertEqual(3, len(game.get_neighbours(Cell(1, 2))))
 
-        self.assertIn((2, 1), game.get_neighbours(Cell(2, 2)))
-        self.assertIn((1, 2), game.get_neighbours(Cell(2, 2)))
-        self.assertIn((3, 2), game.get_neighbours(Cell(2, 2)))
-        self.assertIn((2, 3), game.get_neighbours(Cell(2, 2)))
-        self.assertNotIn((2, 2), game.get_neighbours(Cell(2, 2)))
+        self.assertIn(Cell(2, 1), game.get_neighbours(Cell(2, 2)))
+        self.assertIn(Cell(1, 2), game.get_neighbours(Cell(2, 2)))
+        self.assertIn(Cell(3, 2), game.get_neighbours(Cell(2, 2)))
+        self.assertIn(Cell(2, 3), game.get_neighbours(Cell(2, 2)))
+        self.assertNotIn(Cell(2, 2), game.get_neighbours(Cell(2, 2)))
 
         # Xc-
         # ccc
         # -c-
-        self.assertIn((1, 2), game.get_neighbours(Cell(1, 1)))
-        self.assertNotIn((3, 2), game.get_neighbours(Cell(1, 1)))
-        self.assertIn((2, 1), game.get_neighbours(Cell(1, 1)))
-        self.assertIn((2, 2), game.get_neighbours(Cell(1, 1)))
-        self.assertNotIn((2, 3), game.get_neighbours(Cell(1, 1)))
+        self.assertIn(Cell(1, 2), game.get_neighbours(Cell(1, 1)))
+        self.assertNotIn(Cell(3, 2), game.get_neighbours(Cell(1, 1)))
+        self.assertIn(Cell(2, 1), game.get_neighbours(Cell(1, 1)))
+        self.assertIn(Cell(2, 2), game.get_neighbours(Cell(1, 1)))
+        self.assertNotIn(Cell(2, 3), game.get_neighbours(Cell(1, 1)))
