@@ -9,9 +9,10 @@ def number_neighbors(cell, cells):
     n = 0
     for (x, y) in cells:
         if(cx - 1 <= x and cx + 1 >= x and cy -1 <= y and cy + 1 >= cy):
-            n = n + 1
+            if(not (cy == y and cx == x)):
+               n = n + 1
 
-    return n - 1
+    return n 
 
 class TestThis(unittest.TestCase):
     def test_should_be_able_to_create_a_game(self):
