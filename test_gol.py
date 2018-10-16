@@ -9,8 +9,7 @@ class Game:
     def get_neighbours(self, cell):
         targetCell = Cell(cell[0], cell[1])
         neighbours = []
-        for (x, y) in self.cells:
-            thisCell = Cell(x, y)
+        for thisCell in self.realCells:
             if (
                 targetCell.x - 1 <= thisCell.x
                 and targetCell.x + 1 >= thisCell.x
