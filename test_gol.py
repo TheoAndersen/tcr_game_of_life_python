@@ -50,3 +50,5 @@ class TestThis(unittest.TestCase):
         self.assertIn((3, 2), get_neighbours((2, 2), cells))
         self.assertIn((2, 3), get_neighbours((2, 2), cells))
         self.assertNotIn((2, 2), get_neighbours((2, 2), cells))
+
+        self.assertIn((1, 2), get_neighbours((1, 1), cells))
