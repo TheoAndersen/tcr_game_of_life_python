@@ -20,6 +20,10 @@ class Game:
 
         return neighbours
 
+    def step(self):
+        self.cells = []
+        return self
+
 
 class Cell:
     def __init__(self, x, y):
@@ -31,6 +35,11 @@ class Cell:
 
 
 class TestThis(unittest.TestCase):
+    def test_step_kills(self):
+        game = Game([Cell(2, 2)])
+        game = game.step()
+        self.assertEqual(0, len(game.cells))
+
     def test_cell_should_be_immutable(self):
         cell = Cell(1, 2)
         self.assertEqual(Cell(1, 2), Cell(1, 2))
