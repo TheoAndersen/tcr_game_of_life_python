@@ -7,8 +7,7 @@ class Game:
         self.cells = cells
 
     def get_neighbours(self, cell):
-        (cx, cy) = cell
-        targetCell = Cell(cx, cy)
+        targetCell = Cell(cell[0], cell[1])
         neighbours = []
         for (x, y) in self.cells:
             thisCell = Cell(x, y)
