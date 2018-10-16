@@ -1,18 +1,32 @@
 import unittest
 
+
 class Game:
     def __init__(self, cells):
         self.cells = cells
-        
+
+
+def get_neighbours(cell, cells):
+    (cx, cy) = cell
+    neighbours = []
+    for (x, y) in cells:
+        if cx - 1 <= x and cx + 1 >= x and cy - 1 <= y and cy + 1 >= cy:
+            if not (cy == y and cx == x):
+                neighbours.append((x, y))
+
+    return neighbours
+
+
 def number_neighbors(cell, cells):
     (cx, cy) = cell
     n = 0
     for (x, y) in cells:
-        if(cx - 1 <= x and cx + 1 >= x and cy -1 <= y and cy + 1 >= cy):
-            if(not (cy == y and cx == x)):
-               n = n + 1
+        if cx - 1 <= x and cx + 1 >= x and cy - 1 <= y and cy + 1 >= cy:
+            if not (cy == y and cx == x):
+                n = n + 1
 
-    return n 
+    return n
+
 
 class TestThis(unittest.TestCase):
     def test_should_be_able_to_create_a_game(self):
@@ -29,6 +43,6 @@ class TestThis(unittest.TestCase):
         # -c-
         # Xcc
         # -c-
-        self.assertEqual(3, number_neighbors((1, 2), cells)) 
+        self.assertEqual(3, number_neighbors((1, 2), cells))
 
-        
+        self.assertIn((2, 1), get_neighbours((2, 2), cells))
