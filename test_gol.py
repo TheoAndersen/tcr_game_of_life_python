@@ -29,6 +29,7 @@ class TestThis(unittest.TestCase):
     def test_cell_should_be_immutable(self):
         cell = Cell(1, 2)
         self.assertEqual(Cell(1, 2), Cell(1, 2))
+        self.assertNotEqual(Cell(1, 1), Cell(2, 2))
 
     def test_should_be_able_to_create_a_game(self):
         game = Game([(2, 2)])
