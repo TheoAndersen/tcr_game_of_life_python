@@ -13,10 +13,10 @@ class Game:
         for (x, y) in self.cells:
             thisCell = Cell(x, y)
             if (
-                cx - 1 <= thisCell.x
-                and cx + 1 >= thisCell.x
-                and cy - 1 <= thisCell.y
-                and cy + 1 >= thisCell.y
+                targetCell.x - 1 <= thisCell.x
+                and targetCell.x + 1 >= thisCell.x
+                and targetCell.y - 1 <= thisCell.y
+                and targetCell.y + 1 >= thisCell.y
             ):
                 if not (cy == thisCell.y and cx == thisCell.x):
                     neighbours.append(thisCell)
