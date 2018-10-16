@@ -18,7 +18,7 @@ class Game:
                 and targetCell.y - 1 <= thisCell.y
                 and targetCell.y + 1 >= thisCell.y
             ):
-                if not (cy == thisCell.y and cx == thisCell.x):
+                if not (targetCell.y == thisCell.y and targetCell.x == thisCell.x):
                     neighbours.append(thisCell)
 
         return list(map(lambda cell: (cell.x, cell.y), neighbours))
