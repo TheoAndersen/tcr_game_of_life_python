@@ -11,6 +11,7 @@ class Game:
         targetCell = Cell(cx, cy)
         neighbours = []
         for (x, y) in self.cells:
+            thisCell = Cell(x, y)
             if cx - 1 <= x and cx + 1 >= x and cy - 1 <= y and cy + 1 >= y:
                 if not (cy == y and cx == x):
                     neighbours.append((x, y))
