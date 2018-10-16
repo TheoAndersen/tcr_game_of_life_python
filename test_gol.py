@@ -21,10 +21,14 @@ class Cell:
         self.x = x
         self.y = y
 
+    def __eq__(self, other):
+        return self.x == other.x and self.y == other.y
+
 
 class TestThis(unittest.TestCase):
     def test_cell_should_be_immutable(self):
         cell = Cell(1, 2)
+        self.assertEqual(Cell(1, 2), Cell(1, 2))
 
     def test_should_be_able_to_create_a_game(self):
         game = Game([(2, 2)])
