@@ -6,7 +6,7 @@ class Game:
         self.cells = list(map(lambda c: Cell(c[0], c[1]), cells))
 
     def get_neighbours(self, cell):
-        targetCell = Cell(cell[0], cell[1])
+        targetCell = cell
         neighbours = []
         for thisCell in self.cells:
             if (
@@ -45,24 +45,24 @@ class TestThis(unittest.TestCase):
         # -c-
         # cXc
         # -c-
-        self.assertEqual(4, len(game.get_neighbours((2, 2))))
+        self.assertEqual(4, len(game.get_neighbours(Cell(2, 2))))
 
         # -c-
         # Xcc
         # -c-
-        self.assertEqual(3, len(game.get_neighbours((1, 2))))
+        self.assertEqual(3, len(game.get_neighbours(Cell(1, 2))))
 
-        self.assertIn((2, 1), game.get_neighbours((2, 2)))
-        self.assertIn((1, 2), game.get_neighbours((2, 2)))
-        self.assertIn((3, 2), game.get_neighbours((2, 2)))
-        self.assertIn((2, 3), game.get_neighbours((2, 2)))
-        self.assertNotIn((2, 2), game.get_neighbours((2, 2)))
+        self.assertIn((2, 1), game.get_neighbours(Cell(2, 2)))
+        self.assertIn((1, 2), game.get_neighbours(Cell(2, 2)))
+        self.assertIn((3, 2), game.get_neighbours(Cell(2, 2)))
+        self.assertIn((2, 3), game.get_neighbours(Cell(2, 2)))
+        self.assertNotIn((2, 2), game.get_neighbours(Cell(2, 2)))
 
         # Xc-
         # ccc
         # -c-
-        self.assertIn((1, 2), game.get_neighbours((1, 1)))
-        self.assertNotIn((3, 2), game.get_neighbours((1, 1)))
-        self.assertIn((2, 1), game.get_neighbours((1, 1)))
-        self.assertIn((2, 2), game.get_neighbours((1, 1)))
-        self.assertNotIn((2, 3), game.get_neighbours((1, 1)))
+        self.assertIn((1, 2), game.get_neighbours(Cell(1, 1)))
+        self.assertNotIn((3, 2), game.get_neighbours(Cell(1, 1)))
+        self.assertIn((2, 1), game.get_neighbours(Cell(1, 1)))
+        self.assertIn((2, 2), game.get_neighbours(Cell(1, 1)))
+        self.assertNotIn((2, 3), game.get_neighbours(Cell(1, 1)))
