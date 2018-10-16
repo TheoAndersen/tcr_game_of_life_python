@@ -40,7 +40,7 @@ class TestThis(unittest.TestCase):
 
     def test_should_be_able_to_create_a_game(self):
         game = Game([(2, 2)])
-        self.assertEqual(1, len(game.cells))
+        self.assertEqual(1, len(game.realCells))
 
     def test_get_neighbours(self):
         game = Game([(1, 2), (3, 2), (2, 1), (2, 2), (2, 3)])
