@@ -14,5 +14,7 @@ class TestThis(unittest.TestCase):
         self.assertEqual(1, len(game.cells))
 
     def test_neighboars(self):
-        self.assertEqual(2, number_neighbors((2, 2), [(2, 1), (2, 2), (2, 3)]))
+        cell = (2, 2)
+        cells = [(2, 1), (2, 2), (2, 3)]
+        self.assertEqual(2, number_neighbors(cell, cells))
 
