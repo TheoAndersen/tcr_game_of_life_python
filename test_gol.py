@@ -26,3 +26,7 @@ class TestThis(unittest.TestCase):
         # -c-
         self.assertEqual(4, number_neighbors((2, 2), cells))
 
+        # -c-
+        # Xcc
+        # -c-
+        self.assertEqual(3, number_neighbors((1, 2), cells)) 
