@@ -3,7 +3,7 @@ import unittest
 
 class Game:
     def __init__(self, cells):
-        self.cells = list(map(lambda c: Cell(c[0], c[1]), cells))
+        self.cells = cells
 
     def get_neighbours(self, cell):
         targetCell = cell
@@ -37,11 +37,11 @@ class TestThis(unittest.TestCase):
         self.assertNotEqual(Cell(1, 1), Cell(2, 2))
 
     def test_should_be_able_to_create_a_game(self):
-        game = Game([(2, 2)])
+        game = Game([Cell(2, 2)])
         self.assertEqual(1, len(game.cells))
 
     def test_get_neighbours(self):
-        game = Game([(1, 2), (3, 2), (2, 1), (2, 2), (2, 3)])
+        game = Game([Cell(1, 2), Cell(3, 2), Cell(2, 1), Cell(2, 2), Cell(2, 3)])
         # -c-
         # cXc
         # -c-
