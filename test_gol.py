@@ -16,7 +16,16 @@ class Game:
         return neighbours
 
 
+class Cell:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+
 class TestThis(unittest.TestCase):
+    def test_cell_should_be_immutable(self):
+        cell = Cell(1, 2)
+
     def test_should_be_able_to_create_a_game(self):
         game = Game([(2, 2)])
         self.assertEqual(1, len(game.cells))
