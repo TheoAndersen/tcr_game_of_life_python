@@ -36,7 +36,7 @@ class Cell:
 
 class TestThis(unittest.TestCase):
     def test_step_kills(self):
-        game = Game([Cell(1, 2)])
+        game = Game([Cell("1", 2)])
         game = game.step()
         self.assertEqual(0, len(game.cells))
 
