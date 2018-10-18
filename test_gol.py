@@ -30,7 +30,8 @@ class Game:
         return self
 
     def max_x(self):
-        return max(map(lambda cell: cell.x, self.cells))
+        x = max(map(lambda cell: cell.x, self.cells))
+        return x
 
 
 class Cell:
