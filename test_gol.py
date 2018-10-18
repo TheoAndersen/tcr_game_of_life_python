@@ -40,7 +40,7 @@ class TestThis(unittest.TestCase):
         game = game.step()
         self.assertEqual(0, len(game.cells))
 
-        game = Game([Cell(1, 1), Cell(2, 2), Cell(3, 3), Cell(4, 4)])
+        game = Game([Cell(1, 1), Cell(3, 3), Cell(5, 5)])
         game = game.step()
         self.assertEqual(0, len(game.cells))
 
