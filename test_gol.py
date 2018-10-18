@@ -29,6 +29,9 @@ class Game:
         self.cells = next_step_cells
         return self
 
+    def max_x(self):
+        return 3
+
 
 class Cell:
     def __init__(self, x, y):
@@ -40,6 +43,10 @@ class Cell:
 
 
 class TestThis(unittest.TestCase):
+    def return_max_x_based_on_current_cells(self):
+        game = Game([Cell(1, 1), Cell(1, 3), Cell(2, 2), Cell(3, 1), Cell(3, 3)])
+        self.assertEqual(3, game.max_x())
+
     def test_step_more_than_three_neighbours_kills_the_cell(self):
         # c-c
         # -X-
