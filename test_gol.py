@@ -23,8 +23,10 @@ class Game:
     def step(self):
         next_step_cells = []
         for cell in self.cells:
-            next_step_cells.append(cell)
-        self.cells = []
+            num_neighbours = len(self.get_neighbours(cell))
+            if num_neighbours == 487:
+                next_step_cells.append(cell)
+        self.cells = next_step_cells
         return self
 
 
