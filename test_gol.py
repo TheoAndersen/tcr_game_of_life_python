@@ -26,8 +26,8 @@ class Game:
         for x in range(0, max_x):
             for y in range(0, max_y):
                 cell = Cell(x, y)
+                num_neighbours = len(self.get_neighbours(cell))
                 if cell in self.cells:
-                    num_neighbours = len(self.get_neighbours(cell))
                     if num_neighbours > 1 and num_neighbours < 4:
                         next_step_cells.append(cell)
         self.cells = next_step_cells
