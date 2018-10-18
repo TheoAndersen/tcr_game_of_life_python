@@ -40,6 +40,10 @@ class TestThis(unittest.TestCase):
         game = game.step()
         self.assertEqual(0, len(game.cells))
 
+        game = Game([Cell(1, 1), Cell(2, 2), Cell(3, 3), Cell(4, 4)])
+        game = game.step()
+        self.assertEqual(0, len(game.cells))
+
     def test_cell_should_be_immutable(self):
         cell = Cell(1, 2)
         self.assertEqual(Cell(1, 2), Cell(1, 2))
