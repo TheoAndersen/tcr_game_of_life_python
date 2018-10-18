@@ -24,7 +24,7 @@ class Game:
         next_step_cells = []
         for cell in self.cells:
             num_neighbours = len(self.get_neighbours(cell))
-            if num_neighbours > 1:
+            if num_neighbours > 1 and num_neighbours < 4:
                 next_step_cells.append(cell)
         self.cells = next_step_cells
         return self
@@ -40,6 +40,14 @@ class Cell:
 
 
 class TestThis(unittest.TestCase):
+    def test_step_more_than_three_neighbours_kills_the_cell(self):
+        # c-c
+        # -X-
+        # c-c
+        game = Game([Cell(1, 1), Cell(1, 3), Cell(2, 2), Cell(3, 1), Cell(3, 3)])
+        game = game.step()
+        self.assertEqual(0, len(game.cells))
+
     def test_step_two_or_three_neighbours_keeps_the_cell_alive(self):
         # c--
         # -X-
