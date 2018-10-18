@@ -54,8 +54,8 @@ class Cell:
 
 class TestThis(unittest.TestCase):
     def test_exactly_three_neighbours_revives_a_dead_cell(self):
-        # c-c
-        # -X-
+        # cXc
+        # -c-
         game = Game([Cell(1, 1), Cell(2, 2), Cell(3, 1)])
         game = game.step()
         self.assertIn(Cell(2, 1), game.cells)
