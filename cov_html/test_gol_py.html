@@ -283,7 +283,7 @@
 <p id="t84" class="stm run hide_run">    <span class="key">def</span> <span class="nam">test_step_less_than_two_neibours_kills_the_cell</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t85" class="stm run hide_run">        <span class="nam">game</span> <span class="op">=</span> <span class="nam">Game</span><span class="op">(</span><span class="op">[</span><span class="nam">Cell</span><span class="op">(</span><span class="num">1</span><span class="op">,</span> <span class="num">2</span><span class="op">)</span><span class="op">]</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t86" class="stm run hide_run">        <span class="nam">game</span> <span class="op">=</span> <span class="nam">game</span><span class="op">.</span><span class="nam">step</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t87" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">assertEqual</span><span class="op">(</span><span class="num">0</span><span class="op">,</span> <span class="nam">len</span><span class="op">(</span><span class="nam">game</span><span class="op">.</span><span class="nam">cells</span><span class="op">)</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t87" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">assertNotIn</span><span class="op">(</span><span class="nam">Cell</span><span class="op">(</span><span class="num">1</span><span class="op">,</span> <span class="num">2</span><span class="op">)</span><span class="op">,</span> <span class="nam">game</span><span class="op">.</span><span class="nam">cells</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t88" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t89" class="stm run hide_run">        <span class="nam">game</span> <span class="op">=</span> <span class="nam">Game</span><span class="op">(</span><span class="op">[</span><span class="nam">Cell</span><span class="op">(</span><span class="num">1</span><span class="op">,</span> <span class="num">1</span><span class="op">)</span><span class="op">,</span> <span class="nam">Cell</span><span class="op">(</span><span class="num">3</span><span class="op">,</span> <span class="num">3</span><span class="op">)</span><span class="op">,</span> <span class="nam">Cell</span><span class="op">(</span><span class="num">5</span><span class="op">,</span> <span class="num">5</span><span class="op">)</span><span class="op">]</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t90" class="stm run hide_run">        <span class="nam">game</span> <span class="op">=</span> <span class="nam">game</span><span class="op">.</span><span class="nam">step</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
@@ -334,7 +334,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.5.1</a>,
-            created at 2018-10-18 09:55
+            created at 2018-10-18 09:56
         </p>
     </div>
 </div>

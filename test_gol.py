@@ -84,7 +84,7 @@ class TestThis(unittest.TestCase):
     def test_step_less_than_two_neibours_kills_the_cell(self):
         game = Game([Cell(1, 2)])
         game = game.step()
-        self.assertEqual(0, len(game.cells))
+        self.assertNotIn(Cell(1, 2), game.cells)
 
         game = Game([Cell(1, 1), Cell(3, 3), Cell(5, 5)])
         game = game.step()
