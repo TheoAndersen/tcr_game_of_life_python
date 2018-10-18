@@ -31,7 +31,8 @@ class Game:
 
     def get_grid_bounds(self):
         x = max(map(lambda cell: cell.x, self.cells))
-        return (x, 3)
+        y = max(map(lambda cell: cell.y, self.cells))
+        return (x, y)
 
 
 class Cell:
