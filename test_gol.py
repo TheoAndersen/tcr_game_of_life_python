@@ -49,6 +49,12 @@ class Cell:
 
 
 class TestThis(unittest.TestCase):
+    def test_exactly_three_neighbours_revives_a_dead_cell(self):
+        # c-c
+        # -X-
+        game = Game([Cell(1, 1), Cell(2, 2), Cell(3, 1)])
+        game = game.step()
+
     def test_return_max_x_based_on_current_cells(self):
         game = Game([Cell(1, 1), Cell(2, 2), Cell(3, 1), Cell(3, 2)])
         self.assertEqual((3, 2), game.get_grid_bounds())
