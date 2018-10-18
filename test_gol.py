@@ -40,11 +40,24 @@ class Cell:
 
 
 class TestThis(unittest.TestCase):
-    def test_step_less_than_two_neibours_kills_the_cell(self):
+    def test_step_two_or_three_neighbours_keeps_the_cell_alive(self):
+        # c--
+        # -X-
+        # --c
         game = Game([Cell(1, 1), Cell(2, 2), Cell(3, 3)])
         game = game.step()
         self.assertIn(Cell(2, 2), game.cells)
         self.assertNotIn(Cell(1, 1), game.cells)
+        self.assertNotIn(Cell(3, 3), game.cells)
+
+        # c--
+        # -X-
+        # c-c
+        game = Game([Cell(1, 1), Cell(1, 3), Cell(2, 2), Cell(3, 3)])
+        game = game.step()
+        self.assertIn(Cell(2, 2), game.cells)
+        self.assertNotIn(Cell(1, 1), game.cells)
+        self.assertNotIn(Cell(1, 3), game.cells)
         self.assertNotIn(Cell(3, 3), game.cells)
 
     def test_step_less_than_two_neibours_kills_the_cell(self):
