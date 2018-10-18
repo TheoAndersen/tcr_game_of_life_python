@@ -59,7 +59,7 @@ class TestThis(unittest.TestCase):
         # c-c
         game = Game([Cell(1, 1), Cell(1, 3), Cell(2, 2), Cell(3, 1), Cell(3, 3)])
         game = game.step()
-        self.assertEqual(0, len(game.cells))
+        self.assertNotIn(Cell(2, 2), game.cells)
 
     def test_step_two_or_three_neighbours_keeps_the_cell_alive(self):
         # c--

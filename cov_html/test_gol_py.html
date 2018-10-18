@@ -258,7 +258,7 @@
 <p id="t59" class="pln">        <span class="com"># c-c</span><span class="strut">&nbsp;</span></p>
 <p id="t60" class="stm run hide_run">        <span class="nam">game</span> <span class="op">=</span> <span class="nam">Game</span><span class="op">(</span><span class="op">[</span><span class="nam">Cell</span><span class="op">(</span><span class="num">1</span><span class="op">,</span> <span class="num">1</span><span class="op">)</span><span class="op">,</span> <span class="nam">Cell</span><span class="op">(</span><span class="num">1</span><span class="op">,</span> <span class="num">3</span><span class="op">)</span><span class="op">,</span> <span class="nam">Cell</span><span class="op">(</span><span class="num">2</span><span class="op">,</span> <span class="num">2</span><span class="op">)</span><span class="op">,</span> <span class="nam">Cell</span><span class="op">(</span><span class="num">3</span><span class="op">,</span> <span class="num">1</span><span class="op">)</span><span class="op">,</span> <span class="nam">Cell</span><span class="op">(</span><span class="num">3</span><span class="op">,</span> <span class="num">3</span><span class="op">)</span><span class="op">]</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t61" class="stm run hide_run">        <span class="nam">game</span> <span class="op">=</span> <span class="nam">game</span><span class="op">.</span><span class="nam">step</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t62" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">assertEqual</span><span class="op">(</span><span class="num">0</span><span class="op">,</span> <span class="nam">len</span><span class="op">(</span><span class="nam">game</span><span class="op">.</span><span class="nam">cells</span><span class="op">)</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t62" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">assertNotIn</span><span class="op">(</span><span class="nam">Cell</span><span class="op">(</span><span class="num">2</span><span class="op">,</span> <span class="num">2</span><span class="op">)</span><span class="op">,</span> <span class="nam">game</span><span class="op">.</span><span class="nam">cells</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t63" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t64" class="stm run hide_run">    <span class="key">def</span> <span class="nam">test_step_two_or_three_neighbours_keeps_the_cell_alive</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t65" class="pln">        <span class="com"># c--</span><span class="strut">&nbsp;</span></p>
@@ -334,7 +334,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.5.1</a>,
-            created at 2018-10-18 09:53
+            created at 2018-10-18 09:55
         </p>
     </div>
 </div>
