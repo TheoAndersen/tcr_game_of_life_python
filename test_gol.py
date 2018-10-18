@@ -88,7 +88,7 @@ class TestThis(unittest.TestCase):
 
         game = Game([Cell(1, 1), Cell(3, 3), Cell(5, 5)])
         game = game.step()
-        self.assertEqual(0, len(game.cells))
+        self.assertNotIn(Cell(3, 3), game.cells)
 
     def test_cell_should_be_immutable(self):
         cell = Cell(1, 2)
