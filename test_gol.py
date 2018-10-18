@@ -30,6 +30,10 @@ class Game:
                 if cell in self.cells:
                     if num_neighbours > 1 and num_neighbours < 4:
                         next_step_cells.append(cell)
+                else:
+                    if num_neighbours == 3:
+                        next_step_cells.append(cell)
+
         self.cells = next_step_cells
         return self
 
@@ -54,6 +58,7 @@ class TestThis(unittest.TestCase):
         # -X-
         game = Game([Cell(1, 1), Cell(2, 2), Cell(3, 1)])
         game = game.step()
+        self.assertIn(Cell(2, 1), game.cells)
 
     def test_return_max_x_based_on_current_cells(self):
         game = Game([Cell(1, 1), Cell(2, 2), Cell(3, 1), Cell(3, 2)])
