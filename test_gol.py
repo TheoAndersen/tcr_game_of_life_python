@@ -35,7 +35,7 @@ class Cell:
 
 
 class TestThis(unittest.TestCase):
-    def test_step_kills(self):
+    def test_step_less_than_two_neibours_kills_the_cell(self):
         game = Game([Cell(1, 2)])
         game = game.step()
         self.assertEqual(0, len(game.cells))
